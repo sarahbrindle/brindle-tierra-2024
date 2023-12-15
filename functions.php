@@ -1,0 +1,3 @@
+<?php 
+// Starts the engine.
+?>
