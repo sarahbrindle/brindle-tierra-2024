@@ -6,7 +6,7 @@ Author: Brindle Digital
 Author URI: https://www.brindledigital.com/
 GitHub Theme URI: https://github.com/sarahbrindle/brindle-tierra-2024
 GitHub Branch:    master
-Version: v1.0.0.7
+Version: v1.0.0.8
 Date:            01-01-2024
 Requires at least: 5.0
 Tested up to: 5.7
@@ -759,7 +759,7 @@ main {
   margin-top: 24px;
   height: 2px;
   width: 115px;
-  background-color: #D1D3D1;
+  background-color: var(--primary-color);
 }
 
 .module-banner .text-container p {
@@ -1692,7 +1692,7 @@ button.mfp-close {
 }
 
 .mfp-bg {
-  background: #000;
+  background: var(--black);
   opacity: .75;
 }
 
@@ -1892,7 +1892,7 @@ button.mfp-close {
   width: 100%;
   max-width: 283px;
   height: 2px;
-  background-color: #D1D3D1;
+  background-color: var(--primary-color)
   margin-left: auto;
   margin-right: auto;
   margin-top: 34px;
