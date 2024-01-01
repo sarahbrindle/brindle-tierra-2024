@@ -6,7 +6,7 @@ Author: Brindle Digital
 Author URI: https://www.brindledigital.com/
 GitHub Theme URI: https://github.com/sarahbrindle/brindle-tierra-2024
 GitHub Branch:    master
-Version: v1.0.0.7
+Version: v1.0.0.8
 Date:            01-01-2024
 Requires at least: 5.0
 Tested up to: 5.7
@@ -191,13 +191,18 @@ h2 {
 }
 
 h3 {
-  font-family: var(--secondary-font);
+  font-family: var(--h3-font) !important;
+  font-size: var(--h3-size);
 }
 
 h4 {
-  font-family: var(--secondary-font);
-  color: var(--tertiary-color);
+  font-family: var(--h4-font) !important;
+  font-size: var(--h4-size);
+
+  /*font-family: var(--secondary-font);
   font-size: 22px;
+  */
+  color: var(--tertiary-color);  
   font-style: normal;
   font-weight: 500;
   line-height:1.2;
@@ -206,15 +211,20 @@ h4 {
 }
 
 h5 {
+  font-family: var(--h5-font) !important;
+  font-size: var(--h5-size);
+  /*
   font-family: var(--secondary-font);
-  font-size: 21px;
+  font-size: 21px;*/
   font-weight: 900;
 }
 
 h6 {
-  font-family: var(--secondary-font);
-  font-weight: 500;
-  font-size: 20px;
+  font-family: var(--h6-font) !important;
+  font-size: var(--h6-size);
+  /*font-family: var(--secondary-font);
+  font-size: 20px;*/
+  font-weight: 500;  
 }
 
 p,
@@ -749,7 +759,7 @@ main {
   margin-top: 24px;
   height: 2px;
   width: 115px;
-  background-color: #D1D3D1;
+  background-color: var(--primary-color);
 }
 
 .module-banner .text-container p {
@@ -1040,7 +1050,6 @@ max-width: 390px;
   border: 2px solid var(--white);
   transition: var(--base-transition);
   color: var(--white);
-  color: #FFF;
   font-family: var(--primary-font);
   font-size: 16px;
   font-style: normal;
@@ -1423,7 +1432,6 @@ max-width: 390px;
 .module-amenities-block {
   width: 100%;
   padding-top: 120px;
-  background-image: url(assets/images/t-transparent-1.png);
   background-attachment: fixed;
   background-position: right top;
   background-repeat: no-repeat;
@@ -1684,7 +1692,7 @@ button.mfp-close {
 }
 
 .mfp-bg {
-  background: #000;
+  background: var(--black);
   opacity: .75;
 }
 
@@ -1884,7 +1892,7 @@ button.mfp-close {
   width: 100%;
   max-width: 283px;
   height: 2px;
-  background-color: #D1D3D1;
+  background-color: var(--primary-color)
   margin-left: auto;
   margin-right: auto;
   margin-top: 34px;
