@@ -8,7 +8,13 @@
       <h2><?php echo $amenities['info_title'];?></h2>
     </div>
     <div class="col-lg-8">
-      <?php echo $amenities['info_item_list'];?>
+      <?php if($amenities['info_item_list']){?>
+      <ul>
+          <?php foreach($amenities['info_item_list'] as $items) { ?>
+          <li><?php echo $items['title'];?> <?php if($items['photo']){?><a href="<?php echo $items['photo']['url']; ?>" title="<?php echo $items['photo']['title']; ?>" class="gallery-btn"><img src="<?php echo get_stylesheet_directory_uri();?>/assets/images/camera.svg" alt=""></a><?php }?></li>
+          <?php } ?>
+      </ul>
+      <?php }?>
     </div>
   </div>
 </div>
