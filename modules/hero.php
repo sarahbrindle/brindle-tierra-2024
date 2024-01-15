@@ -1,6 +1,6 @@
 <?php $module = $args['module']; ?>
 <!--module banner starts here-->
-<section class="module-banner" data-aos="fade-up" data-aos-duration="400" data-aos-easing="cubic-bezier">
+<section class="module-banner <?php if ($module['shortcode'] != "") { ?>module-banner-form-landing<?php }?>" data-aos="fade-up" data-aos-duration="400" data-aos-easing="cubic-bezier">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xl-4 col-lg-5">
@@ -19,11 +19,11 @@
       <div class="col-xl-8 col-lg-7">
         <figure>
           <img src="<?=$module['image']['url']?>" alt="<?=$module['image']['alt']?>" >
-          <?php if ($module['shortcode'] != "") { ?>
-        <div class="form-landing">
-            <?php echo do_shortcode($module['shortcode']); ?>
-        </div>
-        <?php } ?>
+              <?php if ($module['shortcode'] != "") { ?>
+                  <div class="form-landing">
+                      <?php echo do_shortcode($module['shortcode']); ?>
+                  </div>
+              <?php } ?>
         </figure>
         
       </div>

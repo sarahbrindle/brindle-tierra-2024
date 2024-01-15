@@ -6,8 +6,8 @@ Author: Brindle Digital
 Author URI: https://www.brindledigital.com/
 GitHub Theme URI: https://github.com/sarahbrindle/brindle-tierra-2024
 GitHub Branch:    master
-Version: v1.0.0.8
-Date:            01-01-2024
+Version: v1.0.0.9
+Date:            15-01-2024
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 7.0
@@ -280,7 +280,35 @@ main {
   gap: 20px;
   max-width: 1810px;
 }
+/*Gallery Manosry*/
+.gallery-container img {
+  max-width: 100%;
+  display: block;
+}
 
+.gallery-container figure {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.gallery-container figure > img {
+  grid-row: 1 / -1;
+  grid-column: 1;
+}
+
+.gallery-container figure a {
+  color: black;
+  text-decoration: none;
+}
+
+.gallery-container {
+  column-count: 4;
+  column-gap: 10px;
+}
+/*End*/
 @media(min-width:1201px) {
   .site-header .container-fluid {
     max-width: none;
@@ -339,6 +367,9 @@ main {
 }
 
 .primary-menu > li:not(.nav-btn) > a:hover, .primary-menu > li:not(.nav-btn) > a:focus {
+  color: var(--primary-color);
+}
+.primary-menu > li:not(.nav-btn).active > a{
   color: var(--primary-color);
 }
 
@@ -1220,7 +1251,7 @@ max-width: 390px;
 }
 
 @media(max-width:1230px) {
-  .site-navigation {
+  .site-navigation #menu-header-menu {
     display: none;
   }
 }
@@ -1667,7 +1698,28 @@ max-width: 390px;
     padding-left: 30px;
   }
 }
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
 
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
 .mfp-arrow::before, 
 .mfp-arrow::after {
   display: none!important;
@@ -1698,7 +1750,8 @@ button.mfp-close {
 
 .module-intro-block {
   width: 100%;
-  padding-top: 160px;
+  /*padding-top: 160px;*/
+  padding-top: 110px;
   padding-bottom: 120px;
   background-repeat: no-repeat;
   background-position: top right;
@@ -1732,7 +1785,8 @@ button.mfp-close {
   align-items: center;
   flex-wrap: wrap;
   padding-top: 30px;
-  background-color: #E6EAEE;
+ /* background-color: #E6EAEE;*/
+  background-color: var(--white);
   margin-bottom: 40px;
 }
 .module-fp-tabs-block ul li {
@@ -1745,7 +1799,7 @@ button.mfp-close {
   transition: all .2s ease-in-out;
 }
 .module-fp-tabs-block ul li button.active {
-  background-color: var(--white);
+  background-color: var(--secondary-color);
 }
 
 @media(max-width:1200px) {
@@ -1841,7 +1895,7 @@ button.mfp-close {
   }
 }
 
-.landing-page .module-banner .row [class*="col-"] figure {
+.module-banner-form-landing .row [class*="col-"] figure {
   position: relative;  
   padding: 30px;
   display: flex!important;
@@ -1853,7 +1907,7 @@ button.mfp-close {
   max-height: 838px;
 }
 
-.landing-page .module-banner .row [class*="col-"] figure img {
+.module-banner-form-landing .row [class*="col-"] figure img {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -1892,7 +1946,7 @@ button.mfp-close {
   width: 100%;
   max-width: 283px;
   height: 2px;
-  background-color: var(--primary-color)
+  background-color: var(--primary-color);
   margin-left: auto;
   margin-right: auto;
   margin-top: 34px;
@@ -2014,4 +2068,41 @@ body .form-landing .gform-theme--framework .gfield:where(:not(.gfield--type-html
 .module-fp-tabs-block .tab-content img {
   display: block;
   margin: 0 auto;
+}
+
+
+
+@media(min-width:1201px) and (max-width:1860px) {
+  .site-header .site-logo,
+  .module-banner .row [class*="col-"] .text-container{
+    padding-left: 50px;
+  }
+  .site-header .container-fluid .nav-right {
+    padding-right: 25px;
+  }
+  .module-floor-plans .row [class*="col-"] article {
+    padding-left: 100px;
+  }
+  .module-intro .container-fluid{
+    padding-left: 100px;
+  }
+
+  .module-locations .row [class*="col-"] .text-container {
+    padding-left: 50px;
+    max-width: 610px;
+  }
+  .module-contact .container-fluid{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .module-gallery .container-fluid{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .module-amenities-info .container-fluid{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }

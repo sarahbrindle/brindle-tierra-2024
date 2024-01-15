@@ -42,7 +42,7 @@
         <div class="footer-widgets">
           <div class="widget-1">
               <?php if ($footer['logo']['url']) { ?>
-                  <figure><img src="<?=$footer['logo']['url']?>" alt="<?=$footer['logo']['alt']?>" /></figure>
+                  <figure><a href="<?php echo home_url(); ?>" class="home-link"><img src="<?=$footer['logo']['url']?>" alt="<?=$footer['logo']['alt']?>" /></a></figure>
               <?php } ?>
           </div>
           <div class="widget-2">
