@@ -17,9 +17,11 @@
         </div>
       </div>
       <div class="col-lg-6" data-aos="fade-right" data-aos-duration="600" data-aos-easing="cubic-bezier">
-        <figure>
-          <img src="<?=$module['map']['url']?>" alt="<?=$module['map']['alt']?>">
-        </figure>
+        <?php if($module['map']['url']){?>
+            <figure>
+              <img src="<?=$module['map']['url']?>" alt="<?=$module['map']['alt']?>">
+            </figure>
+        <?php }?>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 <?php $module = $args['module']; ?>
 <?php 
 $count = 1;
+if($module['items']){
 foreach($module['items'] as $items) { ?>
 <!--module pet policy starts here-->
 <section class="module-pet-policy">
@@ -23,4 +24,4 @@ foreach($module['items'] as $items) { ?>
 <!--module pet-policy ends here-->
 <?php 
 $count++;
-} ?>
+}} ?>

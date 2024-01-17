@@ -3,11 +3,11 @@
 <section class="module-slider-1"  data-aos="fade-down" data-aos-duration="600" data-aos-easing="cubic-bezier">
   <div class="container-fluid">
     <div class="slider">
-      <?php foreach ($module['images'] as $image) { ?>
+      <?php if($module['images']){ foreach ($module['images'] as $image) { ?>
       <figure>
         <img src="<?=$image['image']['url']?>" alt="<?=$image['image']['alt']?>">
       </figure>
-      <?php } ?>
+      <?php }} ?>
     </div>
     <article>
       <h4 class="title-dynamic"></h4>

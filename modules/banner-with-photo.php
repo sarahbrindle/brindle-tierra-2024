@@ -4,7 +4,9 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900" data-aos-easing="cubic-bezier">
-        <figure><img src="<?=$module['photo']['url']?>" alt="<?=$module['photo']['alt']?>" alt=""></figure>
+        <?php if($module['photo']){?>
+            <figure><img src="<?=$module['photo']['url']?>" alt="<?=$module['photo']['alt']?>" alt=""></figure>
+        <?php }?>
       </div>
       <div class="col-lg-6">
         <div class="text-container">
