@@ -3,16 +3,16 @@
       <section class="module-fp-tabs-block"  data-aos="fade-down" data-aos-duration="300" data-aos-easing="cubic-bezier">
         <div class="container-fluid">
           <ul id="floorPlanTab" role="tablist">
-            <?php $tabCount = 1; foreach($module['tabs'] as $tabs) { ?>
+            <?php $tabCount = 1; if($module['tabs']) { foreach($module['tabs'] as $tabs) { ?>
             <li class="nav-item" role="presentation">
               <button class="nav-link <?php if($tabCount==1){?> active <?php }?>" data-bs-toggle="tab" data-bs-target="#tab_<?php echo $tabCount; ?>"><?php echo $tabs['tab_title']; ?></button>
             </li>
-            <?php $tabCount++; } ?>
+            <?php $tabCount++; }} ?>
 
           </ul>
 
           <div class="tab-content" id="myTabContent">
-            <?php $tabCount = 1; foreach($module['tabs'] as $tabs) { ?>
+            <?php $tabCount = 1; if($module['tabs']){ foreach($module['tabs'] as $tabs) { ?>
                     <?php if ($tabs['shortcode'] != "") { ?>
                     <div class="tab-pane fade <?php if($tabCount==1){?> show active <?php }?>" id="tab_<?php echo $tabCount; ?>" role="tabpanel">
                       <?php echo do_shortcode($tabs['shortcode']); ?>
@@ -28,7 +28,7 @@
                       <img src="<?php echo $tabs['image']['url']; ?>" alt="<?php echo $tabs['image']['alt']; ?>" />
                     </div>
                     <?php } ?>
-            <?php $tabCount++; } ?>
+            <?php $tabCount++; }} ?>
           </div>
 
         </div>

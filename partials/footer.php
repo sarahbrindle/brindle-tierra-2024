@@ -47,17 +47,23 @@
           </div>
           <div class="widget-2">
             <address>
-              <?php get_template_part('partials/copy', null, array('copy' => $footer['address'], 'class' => '')); ?>   
+              <?php get_template_part('partials/copy', null, array('copy' => $footer['address'], 'class' => '')); ?> 
+              <?php if ($footer['directions']) { ?>  
               <a target="_blank" href="<?=$footer['directions']['url']?>"><?=$footer['directions']['title']?> <i class="fa-solid fa-arrow-right-long"></i></a>
+              <?php }?>
             </address>
-            
-            <div class="phone">
-              <a href="tel:<?=$footer['phone_number']?>" class="address phone-number"><?=$footer['phone_number']?></a>
-            </div>
+            <?php if($footer['phone_number']){?>
+                <div class="phone">
+                  <a href="tel:<?=$footer['phone_number']?>" class="address phone-number"><?=$footer['phone_number']?></a>
+                </div>
+            <?php }?>
 
-            <div class="office-timings">
-              <?=$footer['office_timing']?>
-            </div>
+            <?php if($footer['office_timing']){?>
+                <div class="office-timings">
+                  <?=$footer['office_timing']?>
+                </div>
+            <?php }?>
+
           </div>
           <div class="widget-3">
             <div class="footer-menu">
@@ -88,7 +94,9 @@
           echo $copyright;
 
           ?></p>          
-          <?php foreach ($footer['icons'] as $icons) { ?>
+          <?php
+          if($footer['icons']){
+           foreach ($footer['icons'] as $icons) { ?>
                     
                     <figure>
                         <?php if ($icons['link'] != "") { ?>
@@ -97,12 +105,15 @@
                               <img src="<?php echo $icons['icon']['url']; ?>" alt="<?php echo $icons['icon']['alt']; ?>" />
                         <?php if ($icons['link'] != "") { ?></a><?php } ?> 
                     </figure>
-          <?php } ?>
+          
+          <?php }} ?>
 
         </div>
         <?php } ?>
         
-        <?php foreach ($footer['design_by_icons'] as $icons) { ?>
+        <?php 
+        if($footer['design_by_icons']){
+        foreach ($footer['design_by_icons'] as $icons) { ?>
                     
                     <figure>
                         <?php if ($icons['link'] != "") { ?>
@@ -111,7 +122,7 @@
                               <img src="<?php echo $icons['icon']['url']; ?>" alt="<?php echo $icons['icon']['alt']; ?>" />
                         <?php if ($icons['link'] != "") { ?></a><?php } ?> 
                     </figure>
-          <?php } ?>
+          <?php }} ?>
 
 
       </div>

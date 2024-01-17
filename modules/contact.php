@@ -5,11 +5,13 @@
   <div class="row">
     <div class="col-lg-6">
       <?php get_template_part('partials/title', null, array('title' => $module['contact_title_title'], 'class' => 'hero-title')); ?>
-      <?php echo $module['copy']; ?>
+      <?php if($module['copy']) { echo $module['copy'];} ?>
     </div>
     <div class="col-lg-6">
       <?php get_template_part('partials/title', null, array('title' => $module['form_title_title'], 'class' => 'hero-title')); ?>
-        <?php echo do_shortcode($module['shortcode']); ?>
+        <?php if($module['shortcode']){ ?>
+            <?php echo do_shortcode($module['shortcode']); ?>
+        <?php }?>
     </div>
   </div>
 </div>

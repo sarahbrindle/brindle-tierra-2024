@@ -9,13 +9,15 @@ if($module['buttons']){
 }
 ?>
 <!--module intro starts here-->
-<section class="module-intro" style="background-image: url(<?=$module['background']['url']?>" alt="<?=$module['image']['alt']?>);">
+<section class="module-intro" <?php if($module['background']['url']){?> style="background-image: url(<?=$module['background']['url']?>" <?php }?> alt="<?=$module['image']['alt']?>);">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-7"  data-aos="fade-left" data-aos-duration="600" data-aos-easing="cubic-bezier">
-        <figure>
-          <img src="<?=$module['image']['url']?>" alt="<?=$module['image']['alt']?>">
-        </figure>
+        <?php if($module['image']['url']){?>
+            <figure>
+              <img src="<?=$module['image']['url']?>" alt="<?=$module['image']['alt']?>">
+            </figure>
+        <?php }?>
       </div>
       <div class="col-lg-5" data-aos="fade-right" data-aos-duration="600" data-aos-easing="cubic-bezier">
         <?php get_template_part('partials/title', null, array('title' => $module['intro_title_title'], 'class' => 'intro-title')); ?>

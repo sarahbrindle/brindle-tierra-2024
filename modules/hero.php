@@ -17,14 +17,18 @@
         </div>
       </div>
       <div class="col-xl-8 col-lg-7">
+        
         <figure>
-          <img src="<?=$module['image']['url']?>" alt="<?=$module['image']['alt']?>" >
+              <?php if($module['image']['url']){?>
+                <img src="<?=$module['image']['url']?>" alt="<?=$module['image']['alt']?>" >
+              <?php }?>
               <?php if ($module['shortcode'] != "") { ?>
                   <div class="form-landing">
                       <?php echo do_shortcode($module['shortcode']); ?>
                   </div>
               <?php } ?>
         </figure>
+        
         
       </div>
     </div>

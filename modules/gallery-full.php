@@ -3,11 +3,11 @@
 <section class="module-gallery" data-aos="fade-up" data-aos-duration="600" data-aos-easing="cubic-bezier">
   <div class="container-fluid">
     <div class="slider">
-      <?php foreach ($module['gallery'] as $image) { ?>
+      <?php if($module['gallery']){ foreach ($module['gallery'] as $image) { ?>
       <figure>
         <img src="<?=$image['photo']['url']?>" alt="<?=$image['photo']['alt']?>">
       </figure>
-      <?php } ?>
+      <?php }} ?>
     </div>
     <article>
       <?php get_template_part('partials/title', null, array('title' => $module['gallery_title_title'], 'class' => '')); ?>

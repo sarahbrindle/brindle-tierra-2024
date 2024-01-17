@@ -25,14 +25,14 @@
       <div class="col-xl-9 col-lg-8" data-aos="fade-left" data-aos-duration="600" data-aos-easing="cubic-bezier">
         <div class="slider">
           
-          <?php foreach ($module['images'] as $image) { ?>
+          <?php if($module['images']){foreach ($module['images'] as $image) { ?>
           <figure>
             <img src="<?=$image['photo']['url']?>" alt="<?=$image['photo']['alt']?>">
             <figcaption>
             <h4><?=$image['photo']['alt']?></h4>
             </figcaption>
           </figure>
-          <?php } ?>
+          <?php }} ?>
 
         </div>
       </div>
