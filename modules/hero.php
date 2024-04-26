@@ -1,6 +1,6 @@
 <?php $module = $args['module']; ?>
 <!--module banner starts here-->
-<section class="module-banner <?php if ($module['shortcode'] != "") { ?>module-banner-form-landing<?php }?>" data-aos="fade-up" data-aos-duration="400" data-aos-easing="cubic-bezier">
+<section id="form" class="module-banner <?php if ($module['shortcode'] != "") { ?>module-banner-form-landing<?php }?>" data-aos="fade-up" data-aos-duration="400" data-aos-easing="cubic-bezier">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xl-4 col-lg-5">
