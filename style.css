@@ -6,8 +6,8 @@ Author: Brindle Digital
 Author URI: https://www.brindledigital.com/
 GitHub Theme URI: https://github.com/sarahbrindle/brindle-tierra-2024
 GitHub Branch:    master
-Version: v1.0.0.13
-Date:            26-04-2024
+Version: v1.0.0.14
+Date:            17-06-2024
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 7.0
@@ -963,7 +963,9 @@ max-width: 390px;
   margin: 0;
   cursor: pointer;
 }
-
+.loc_slider .primary-btn{
+    text-align: center;
+  }
 .module-floor-plans {
   width: 100%;
   padding-top: 190px;

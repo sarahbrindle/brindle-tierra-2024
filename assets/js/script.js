@@ -68,7 +68,7 @@ $(document).ready(function(){
     $('.title-dynamic').text(altText);
   }
 
-  $(".module-floor-plans .slider").slick({
+  $(".module-floor-plans .floor_slider").slick({
     dots: false,
     infinite: true,
     speed: 300,
@@ -90,6 +90,36 @@ $(document).ready(function(){
       },
     ]
   });
+
+
+  $(".module-floor-plans .loc_slider").slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    centerMode: false,
+    variableWidth: false,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: false,
+          centerMode: false,
+        }
+      },
+    ]
+  });
+
+  $('.next-arrow').on('click', function(){
+        $('.module-floor-plans .loc_slider').slick('slickNext');
+  });
+  $('.prev-arrow').on('click', function(){
+        $('.module-floor-plans .loc_slider').slick('slickPrev');
+  });
+
 
   $(".module-gallery .slider").slick({
     dots: false,
@@ -141,4 +171,10 @@ $(document).ready(function() {
     // Add more options as needed
     closeBtnInside: false,
  });
+});
+
+$('.open-popup-link').magnificPopup({
+  type: 'inline',
+  midClick: true,
+  mainClass: 'mfp-fade'
 });
