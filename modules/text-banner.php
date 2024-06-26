@@ -30,6 +30,7 @@ if(($module['background_color'])){
     <?php } ?> 
   </article>
   <?php if ($module['shortcode'] != "") { ?>
+    <?php get_template_part('partials/title', null, array('title' => $module['shortcode_title_title'], 'class' => '')); ?>
     <div class="container container-full">
         <?php echo do_shortcode($module['shortcode']); ?>
     </div>
