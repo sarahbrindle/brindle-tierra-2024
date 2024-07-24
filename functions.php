@@ -36,6 +36,8 @@ add_action('init', function() {
 }, 99);
 
 
+//Meta support
+add_theme_support( 'title-tag' );
 
 // Register Menus
 function register_menus() {
