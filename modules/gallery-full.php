@@ -14,9 +14,14 @@
     <?php get_template_part('partials/copy', null, array('copy' => $module['gallery_subtitle'], 'class' => '')); ?>   
       <div class="cta-btn-grp">
         
-        <?php if ($module['link']) { ?>
+        <?php if ($module['link']) { 
+            $linkClass = '';
+            if(isset($module['link_class'])){
+                $linkClass = $module['link_class'];
+            }
+          ?>
             <div class="page-btn">            
-              <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => '', 'has_arrow' => false)); ?>
+              <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => $linkClass, 'has_arrow' => false)); ?>
             </div> 
         <?php } ?> 
 

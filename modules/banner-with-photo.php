@@ -12,9 +12,14 @@
         <div class="text-container">
           <?php get_template_part('partials/title', null, array('title' => $module['banner_title_title'], 'class' => '')); ?>
     <?php get_template_part('partials/copy', null, array('copy' => $module['banner_subtitle'], 'class' => '')); ?>          
-          <?php if ($module['link']) { ?>
+          <?php if ($module['link']) { 
+            $linkClass = '';
+            if(isset($module['link_class'])){
+                $linkClass = $module['link_class'];
+            }
+            ?>
               <div class="btn-white-line">            
-                <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => '', 'has_arrow' => false)); ?>
+                <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => $linkClass, 'has_arrow' => false)); ?>
               </div> 
           <?php } ?> 
 

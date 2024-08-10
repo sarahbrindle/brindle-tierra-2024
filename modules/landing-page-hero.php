@@ -307,9 +307,14 @@
       <div class="text-container">
         <?php if($module['landing_page_editor']) { echo $module['landing_page_editor'];} ?>
        
-        <?php if ($module['link']) { ?>
+        <?php if ($module['link']) { 
+              $linkClass = '';
+            if(isset($module['link_class'])){
+                $linkClass = $module['link_class'];
+            }
+          ?>
               <div class="btn-secondary">       
-                <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => 'open-popup-link', 'has_arrow' => false)); ?>
+                <?php get_template_part('partials/button', null, array('button' => $module['link'],'class_alt' => $linkClass, 'has_arrow' => false)); ?>
               </div> 
           <?php } ?> 
 
@@ -327,7 +332,7 @@
 </div>
 
 
-<div id="test-popup" class="white-popup mfp-hide">
+<div <?php if ($module['link']) { ?> id="<?php echo str_replace('#', '', $module['link']['url']);?>" <?php }?> class="white-popup mfp-hide">
   <?php echo $module['popup_contents'];?>
 </div>
 

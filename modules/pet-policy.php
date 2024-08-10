@@ -13,9 +13,14 @@ foreach($module['items'] as $items) { ?>
     </figure>
     <?php } ?> 
     <?php get_template_part('partials/copy', null, array('copy' => $items['copy'])); ?>
-      <?php if ($items['link']) { ?>
+      <?php if ($items['link']) { 
+                $linkClass = '';
+                if(isset($module['link_class'])){
+                    $linkClass = $module['link_class'];
+                }
+        ?>
       <div class="primary-btn">
-      	<?php get_template_part('partials/button', null, array('button' => $items['link'],'class_alt' => '', 'has_arrow' => false)); ?>
+      	<?php get_template_part('partials/button', null, array('button' => $items['link'],'class_alt' => $linkClass, 'has_arrow' => false)); ?>
       </div>
       <?php } ?> 
   </article>

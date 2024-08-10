@@ -6,8 +6,8 @@ Author: Brindle Digital
 Author URI: https://www.brindledigital.com/
 GitHub Theme URI: https://github.com/sarahbrindle/brindle-tierra-2024
 GitHub Branch:    master
-Version: v1.0.0.15
-Date:            26-07-2024
+Version: v1.0.0.16
+Date:            10-08-2024
 Requires at least: 5.0
 Tested up to: 5.7
 Requires PHP: 7.0
@@ -307,6 +307,32 @@ main {
 .gallery-container {
   column-count: 4;
   column-gap: 10px;
+}
+.floor_planintro_top{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.floorplan_grid_box{
+  margin-bottom: 50px;
+}
+.floorplan_grid_box figure{
+  margin: 0 0 0;
+  display: block;
+  height: 320px;  
+  overflow: hidden;
+}
+.floorplan_grid_box figure img {
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;
+  object-position: center center;
+  max-width: none;
+  max-height: none;
+}
+.floopplan_gid_title_box{
+  text-align: center;
+  margin-top: 20px;
 }
 /*End*/
 @media(min-width:1201px) {
@@ -904,11 +930,14 @@ max-width: 390px;
 .module-slider-1 .slider figure {
   margin: 0 0 0;
   display: block;
+  height: 415px;
+  width:340px !important;
+  overflow: hidden;
 }
 
 .module-slider-1 .slider figure img {
   width: 100%;
-  height: 415px;
+  height: 100%;  
   object-fit: cover;
   object-position: center center;
   max-width: none;
@@ -1160,8 +1189,20 @@ max-width: 390px;
 
 .module-gallery .slider figure {
   margin: 0 0 0;
+  display: block;
+  min-height: 715px;
+  max-height: 715px;
+  min-width:1190px !important;
+  overflow: hidden;
 }
-
+.module-gallery .slider figure img {
+  width: 100%;
+  height: 100%;  
+  object-fit: cover;
+  object-position: center center;
+  max-width: none;
+  max-height: none;
+}
 .module-gallery article {
   width: 100%;
   max-width: 666px;
@@ -1334,6 +1375,10 @@ max-width: 390px;
     flex-direction: column-reverse;
     row-gap: 20px;
   }
+  .module-location .row {
+    flex-direction: inherit !important;
+    row-gap: 20px;
+  }
   .module-floor-plans .row [class*="col-"] article {
     padding-right: 20px;
     text-align: center;
@@ -1387,8 +1432,12 @@ max-width: 390px;
   .module-banner .row [class*="col-"] .text-container {
     padding-top: 40px;
   }
-  .module-slider-1 .slider figure img {
+  .module-slider-1 .slider figure{
+    width: 300px !important;
     height: 360px;
+  }
+  .module-slider-1 .slider figure img {
+    
   }
   .site-footer .footer-widgets {
     column-gap: 30px;
