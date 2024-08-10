@@ -24,8 +24,14 @@ if($module['buttons']){
     <?php get_template_part('partials/copy', null, array('copy' => $module['intro_subtitle'], 'class' => 'hero-subtitle')); ?>
         <?php if ($no_buttons > 1) { ?>
           <div class="cta-btn-grp">
-                <?php foreach($buttons as $button) { ?>
-                    <div class="primary-btn"><?php get_template_part('partials/button', null, array('button' => $button['link'],'class_alt' => 'button_alt', 'has_arrow' => false)); ?></div>
+                <?php foreach($buttons as $button) { 
+
+                  $linkClass = '';
+                  if(isset($button['link_class'])){
+                      $linkClass = $button['link_class'];
+                  }
+                  ?>
+                    <div class="primary-btn"><?php get_template_part('partials/button', null, array('button' => $button['link'],'class_alt' => $linkClass, 'has_arrow' => false)); ?></div>
                 <?php } ?>            
           </div>
         <?php } ?>
